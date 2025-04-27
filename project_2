@@ -1,0 +1,47 @@
+from PyQt6.QtWidgets import (
+    QApplication,
+    QMainWindow,
+    QWidget,
+    QVBoxLayout,
+    QLabel,
+    QLineEdit,
+    QPushButton 
+)
+from PyQt6.QtCore import Qt
+
+
+
+app = QApplication([])
+
+window = QWidget()
+window.resize(300,400)
+window.setWindowTitle("Чат-Бот")
+
+line = QVBoxLayout()
+window.setStyleSheet("background-color: #40F999")
+
+
+label = QLabel("Привет! Сыграем в игру угадай число?")
+line.addWidget(label)
+
+button_1 = QPushButton("1 - калькулятор")
+button_1.clicked.connect(exit)
+line.addWidget(button_1)
+button_2 = QPushButton("2 - игра угадай число")
+button_2.clicked.connect(exit)
+line.addWidget(button_2)
+button_3 = QPushButton("3 - конвертирование шагов из в день в неделю и в месяц")
+button_3.clicked.connect(exit)
+line.addWidget(button_3)
+button_4 = QPushButton("4 - онлайн магазин ")
+button_4.clicked.connect(exit)
+line.addWidget(button_4)
+button_5 = QPushButton("5 - меню")
+button_5.clicked.connect(exit)
+line.addWidget(button_5)
+
+
+window.setLayout(line)
+window.show()
+app.exec()
+
